@@ -1,0 +1,46 @@
+.bg {
+  background-image: url(galaxydark.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  position: fixed;
+  z-index:-1;
+}
+.full-screen {
+  min-height: 100vh;
+}
+.jumbotron-fluid {
+  display: flex;
+  color: white;
+}
+.jumbo-button {
+  width: 200px;
+}
+.navbar {
+  background-color: none;
+  color: white;
+}
+.box {
+  color: white;
+  padding-top: 5rem;
+}
+.box h1 {
+  padding-bottom: 3rem;
+}
+.card {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: none;
+  margin-bottom: 2rem;
+}
+#profile {
+  width: 100%;
+  border-radius: 50%;
+}
+.fields-bg {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+p, label, .lead, .card-title {
+  font-size: 1.75rem;
+  font-weight: 400;
+}

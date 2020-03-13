@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title></title>
+    <!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+{% load static %}
+<link rel="stylesheet" href="{% static 'blog/style.css' %}">
+
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="{% url 'home' %}">Jaroslaw Kozak</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto">
+      <a class="nav-item nav-link" href="{% url 'home' %}#projects">Projects</a>
+      <a class="nav-item nav-link" href="{% url 'home' %}#about-me">About me</a>
+      <a class="nav-item nav-link" href="{% url 'home' %}#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+<nav class="navbar navbar-expand-md navbar-light bg-light" id="blognav">
+<a class="navbar-brand" href="{% url 'home' %}">Anonymous Blog</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+<div class="navbar-nav">
+<a class="nav-item nav-link" href="{% url 'blog' %}">Posts</a>
+</div>
+</div>
+</nav>
+</header>
+
+<div class="container">
+  <div class="row align-items-center text-right">
+    <div class="col-md-8">
+      <div>
+        <h1>This is my sample blog</h1>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="diamond">
+        <img class="profile-picture" src="{% static 'blog/gokuprofile.jpg' %}" />
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8" id="col">
+        <div class="blog">
+          <h2>{{ blog.blog_title }}<h2>
+          <h6>{{ blog.blog_pub_date_pretty }}</h6>
+          <img class="blog-image" src="{{ blog.blog_image.url }}" />
+          <p>{{ blog.blog_text|safe }}</p>
+          <div class="text-center">
+            <a class="btn btn-lg btn-secondary" href="{% url 'blog' %}" >back to posts</a>
+          </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+      <h2>About me</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum convallis quam ut porttitor. Ut egestas ante at nunc malesuada porta. Suspendisse potenti. Aliquam venenatis at neque id auctor.</p>
+      <p>Vestibulum nibh nisl, tincidunt id aliquam vitae, fringilla eu massa. Mauris bibendum, nisi a consectetur facilisis, arcu elit tempus mi, vitae mattis arcu leo et erat.</p>
+      <p>Aenean eget auctor ligula. Maecenas rutrum maximus molestie. Vivamus aliquam maximus purus, id mattis libero convallis sed. Nam at arcu cursus, lobortis odio vitae, consequat tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc eu dictum lorem. Nullam consequat ligula felis, commodo mollis orci interdum a. Phasellus dignissim dui vitae ultricies scelerisque. Vestibulum sit amet justo nec massa tristique sollicitudin.</p>
+    </div>
+  </div>
+</div>
+
+<footer class="text-muted">
+  <div class="container text-center">
+    <p>&copy; Jaroslaw Kozak</p>
+  </div>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</html>

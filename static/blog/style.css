@@ -1,0 +1,60 @@
+body {
+  background-color: #F5F5F5;
+}
+#blognav {
+  margin-top: 54px;
+}
+.blog {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.blog .btn {
+  color: white;
+
+}
+.blog-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+.blog a {
+  text-decoration: none;
+  color: black;
+}
+.blog a:hover {
+  text-decoration: none;
+  color: darkgray;
+}
+.diamond {
+  width: 256px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.diamond:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 256px;
+  height: 256px;
+  background:
+        linear-gradient(45deg,  #F5F5F5 91px, transparent 91px),
+        linear-gradient(135deg, #F5F5F5 91px, transparent 91px),
+        linear-gradient(225deg, #F5F5F5 91px, transparent 91px),
+        linear-gradient(315deg, #F5F5F5 91px, transparent 91px);
+}
+.profile-picture {
+  width: 100%;
+}
+.row {
+  margin-top: 2rem;
+}
+#capitalized {
+  font-size: 2rem;
+  font-weight: bold;
+}
+p {
+  font-size: 1.5rem;
+}

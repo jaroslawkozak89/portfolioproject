@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="bg full-screen"></div>
+<div class="container-fluid jumbotron-fluid align-items-center justify-content-center full-screen text-center" id="welcome">
+  <div class="col-md-8 text-center">
+    <h1 class="display-4">Hi, I'm Jaroslaw!</h1>
+    <p class="lead">I really enjoy coding in Python language. Whether it's a website, web crawler, or anything Python related I'd love to make it happen.</p>
+    <a class="btn btn-primary btn-lg jumbo-button" href="#projects">See my projects</a>
+    <a class="btn btn-primary btn-lg jumbo-button" href="#contact">Contact me</a>
+  </div>
+</div>
+<div class="container text-center full-screen box" id="projects">
+  <h1 class="display-4">My projects</h1>
+    <div class="row justify-content-center">
+      {% for project in projects.all %}
+      <div class="col-md-4">
+        <div class="card">
+          <img class="card-img-top" src="{{ project.project_image.url }}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{ project.project_name}}</h5>
+            <a href="{{ project.project_link }}" class="btn btn-primary btn-lg">See project</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+</div>
+<div class="text-center container full-screen box" id="about-me">
+  <h1 class="display-4">About me</h1>
+  <div class="row">
+    <div class="col-md-4 align-self-center">
+      <img src="{% static 'homepage/profile.jpg' %}" id="profile">
+    </div>
+    <div class="col-md-8 text-left">
+      <p>My name is Jaroslaw Kozak and I've been coding in many different languages as a hobby for the past 2 years. When I discovered how versatile Python is and in how many places I can use it, I decided to focus on this programming language.</p>
+      <p>I Have a good knowledge of Python and some of the related libraries such as Django and BeautifulSoup. On top of that, I have a broad understanding of web-related technologies: HTML, CSS, JavaScript, Bootstrap. I can also operate with SQLite3 and PostgreSQL databases.</p>
+      <p>If you need help creating a project or would like to work with me I am looking for opportunities to work as a Python Developer.</p>
+    </div>
+  </div>
+</div>
+<div class="text-center container full-screen box" id="contact">
+  <h1 class="display-4">Contact</h1>
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <form method="POST" action="{% url 'add' %}">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="topic">Topic</label>
+          <input type="text" class="form-control" id="topic" name="topic" required>
+        </div>
+        <div class="form-group">
+          <label for="textarea">Description</label>
+          <textarea class="form-control" id="textarea" rows="4" name="description" required></textarea>
+        </div>
+        <button type="submit"class="btn btn-primary btn-lg">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
